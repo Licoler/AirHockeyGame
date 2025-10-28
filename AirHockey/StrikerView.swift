@@ -8,19 +8,16 @@
 import SwiftUI
 
 struct StrikerView: View {
-    var body: some View {
-        ZStack {
-            
+    let radius: CGFloat
+        let color: Color
+        
+        var body: some View {
             Circle()
-                .foregroundStyle(.white)
-                .frame(width: 50, height: 50)
-                .overlay(Circle().stroke(Color.white, lineWidth: 4))
-            
-            
+                .fill(color)
+                .frame(width: radius*2, height: radius*2)
         }
     }
-}
 
 #Preview {
-    StrikerView()
+    StrikerView(radius: 6, color: .green)
 }
